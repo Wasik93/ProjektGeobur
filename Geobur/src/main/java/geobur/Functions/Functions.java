@@ -45,9 +45,6 @@ public class Functions {
         return plot;
     }
 
-    public ZoomHandler newZoomHandler(){
-        return new ZoomHandler();
-    }
 
     public ZoomHandler newZoomHandler(String F){
         return new ZoomHandler(F);

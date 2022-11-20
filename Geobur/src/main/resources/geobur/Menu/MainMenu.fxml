@@ -1,45 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Ellipse?>
-<?import javafx.scene.shape.Polygon?>
-<?import javafx.scene.shape.Polyline?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="geobur.Menu.MainMenuController">
+<Pane fx:id="menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: rgba(255,55,55,0.15);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="geobur.Menu.MainMenuController">
    <children>
       <AnchorPane layoutX="193.0" layoutY="22.0" prefHeight="99.0" prefWidth="415.0">
          <children>
-            <Text layoutX="25.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO GEOBUR" textAlignment="CENTER" wrappingWidth="365.15667724609375">
+            <Text fill="#8c0000" layoutX="25.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO" textAlignment="CENTER" wrappingWidth="365.15667724609375">
                <font>
-                  <Font name="Yu Gothic Medium" size="32.0" />
+                  <Font name="Cambria" size="50.0" />
                </font>
             </Text>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="300.0" layoutY="121.0" prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <Button fx:id="Uklad" layoutX="27.0" layoutY="100.0" mnemonicParsing="false" onAction="#CoordsButtonClick" text="New Coordinate System" />
-            <Button fx:id="Function" layoutX="55.0" layoutY="41.0" mnemonicParsing="false" onAction="#FunctionButtonClick" text="New Function" />
-            <Button fx:id="FSbutton" layoutX="64.0" layoutY="160.0" mnemonicParsing="false" onAction="#FullScreenButtonClick" text="FullScreen" />
-         </children>
-      </AnchorPane>
       <AnchorPane layoutY="351.0" prefHeight="249.0" prefWidth="800.0">
          <children>
-            <Polygon fill="DODGERBLUE" layoutX="694.0" layoutY="158.0" points="-50.0, 40.0, 50.0, 40.0, -50.0, -50.5999755859375" stroke="BLACK" strokeType="INSIDE" />
-            <Polyline fill="CHARTREUSE" layoutX="553.0" layoutY="127.0" points="50.0, -75.60000610351562, 50.0, 70.60003662109375, -34.800048828125, 70.60003662109375, -34.800048828125, -75.60000610351562" strokeType="INSIDE" />
-            <Ellipse fill="DODGERBLUE" layoutX="694.0" layoutY="87.0" radiusX="50.0" radiusY="49.0" stroke="BLACK" strokeType="INSIDE" />
-            <Ellipse fill="DODGERBLUE" layoutX="324.0" layoutY="128.0" radiusX="50.0" radiusY="78.0" stroke="BLACK" strokeType="INSIDE" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="156.0" layoutX="151.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" width="85.0" />
-            <Polyline fill="WHITE" layoutX="64.0" layoutY="85.0" points="34.399993896484375, -33.79998779296875, -50.0, -33.79998779296875, -50.0, 120.0, 34.399993896484375, 120.0" strokeType="INSIDE" />
-            <Circle fill="DODGERBLUE" layoutX="445.0" layoutY="83.0" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="DODGERBLUE" layoutX="445.0" layoutY="156.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
+            <GridPane prefHeight="249.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="G" textAlignment="CENTER" textFill="RED">
+                     <font>
+                        <Font name="Cambria" size="170.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="E" textFill="#dd0000" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Cambria" size="170.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="O" textFill="#bb0000" GridPane.columnIndex="2">
+                     <font>
+                        <Font size="170.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="B" textFill="#990000" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Cambria" size="170.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="U" textFill="#770000" GridPane.columnIndex="4">
+                     <font>
+                        <Font size="170.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="R" textFill="#550000" GridPane.columnIndex="5">
+                     <font>
+                        <Font size="170.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
          </children>
       </AnchorPane>
+      <Button fx:id="Function" layoutX="14.0" layoutY="314.0" mnemonicParsing="false" onAction="#FunctionButtonClick" style="-fx-background-color: rgba(160,0,0,0.8);" text="New Function" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="Uklad" layoutX="685.0" layoutY="314.0" mnemonicParsing="false" onAction="#CoordsButtonClick" style="-fx-background-color: rgba(150, 0, 0,.9);" text="New Coords" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="FSbutton" layoutX="685.0" layoutY="35.0" mnemonicParsing="false" onAction="#FullScreenButtonClick" style="-fx-background-color: rgba(140, 0, 0,1);" text="FullScreen" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <AnchorPane fx:id="anchorPaneLeft" blendMode="SRC_ATOP" layoutX="132.0" layoutY="90.0" prefHeight="313.0" prefWidth="550.0" />
    </children>
 </Pane>

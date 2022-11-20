@@ -5,7 +5,6 @@ import geobur.Menu.MainMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -15,7 +14,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,6 +21,8 @@ import java.io.IOException;
 public class FunctionsController {
     private Stage stage;
     private Scene scene;
+
+    private Double zoomFactor = 1.0;
 
     String functionName = "x";
 
@@ -38,10 +38,7 @@ public class FunctionsController {
         Parent root = fxmlLoader.load();
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root,800,600);
-        boolean sFS = false;
-        if(stage.isFullScreen()){
-            sFS = true;
-        };
+        boolean sFS = stage.isFullScreen();
         stage.setScene(scene);
         stage.setTitle("Geobur - Main Menu");
         stage.setFullScreen(sFS);
@@ -71,7 +68,7 @@ public class FunctionsController {
 
             Functions f = new Functions(functionName);
             stackPane.getChildren().clear();
-            stackPane.getChildren().add(f.plotChart(1));
+            stackPane.getChildren().add(f.plotChart(zoomFactor));
             stackPane.toFront();
             ZoomHandler zoomHandler = f.newZoomHandler(functionName);
             stackPane.setOnScroll(zoomHandler);
@@ -81,7 +78,7 @@ public class FunctionsController {
     @FXML
     void initialize(){
         Functions f = new Functions(functionName);
-        stackPane.getChildren().add(f.plotChart(1));
+        stackPane.getChildren().add(f.plotChart(zoomFactor));
         stackPane.toFront();
         ZoomHandler zoomHandler = f.newZoomHandler(functionName);
         stackPane.setOnScroll(zoomHandler);

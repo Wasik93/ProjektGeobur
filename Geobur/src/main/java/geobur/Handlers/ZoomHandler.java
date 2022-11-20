@@ -34,7 +34,6 @@ public class ZoomHandler implements EventHandler<ScrollEvent> {
         }
         Functions f = new Functions(functionName);
         Plot plot = f.plotChart(zoomFactor);
-
         Pane parent = (Pane) event.getSource();
         parent.getChildren().setAll(plot);
     }

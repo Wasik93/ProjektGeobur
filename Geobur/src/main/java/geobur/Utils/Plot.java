@@ -1,6 +1,5 @@
 package geobur.Utils;
 
-import geobur.Functions.Functions;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
@@ -17,7 +16,7 @@ public class Plot extends Pane {
             Axes axes
     ) {
         Path path = new Path();
-        path.setStroke(Color.BLUE.deriveColor(0, 1, 1, 1));
+        path.setStroke(Color.rgb(140,0,0));
         path.setStrokeWidth(2);
 
         path.setClip(
@@ -40,7 +39,6 @@ public class Plot extends Pane {
         x += xInc;
         while (x < xMax) {
             y = f.apply(x);
-
             path.getElements().add(
                     new LineTo(
                             mapX(x, axes), mapY(y, axes)
