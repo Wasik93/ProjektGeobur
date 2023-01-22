@@ -2,10 +2,9 @@ package geobur.Functions;
 
 import geobur.Errors.BadSyntaxException;
 import geobur.Handlers.ZoomHandler;
+import geobur.Parser.Expression;
 import geobur.Utils.Axes;
 import geobur.Utils.Plot;
-import org.mariuszgromada.math.mxparser.Argument;
-import org.mariuszgromada.math.mxparser.Expression;
 
 import java.util.function.Function;
 
@@ -19,13 +18,11 @@ public class Functions {
     }
     public Functions(String F) {
         function = aDouble -> {
-            Argument x = new Argument("x");
-            Expression expression = new Expression(F, x);
+            Expression expression = new Expression(F);
             if(!expression.checkSyntax()){
                 throw new BadSyntaxException();
             }
-            x.setArgumentValue(aDouble);
-            return expression.calculate();
+            return expression.calculate(aDouble);
         };
     }
 
